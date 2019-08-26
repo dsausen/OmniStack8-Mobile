@@ -28,7 +28,7 @@ export default function Login({navigation}) {
     const response = await api.post('/devs', {username: user});
     const {_id} = response.data;
     await AsyncStorage.setItem('user', _id);
-    navigation.navigate('Main', {_id});
+    navigation.navigate('Main', {user: _id});
   }
 
   return (
@@ -59,7 +59,7 @@ export default function Login({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#0052CC',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 30,
